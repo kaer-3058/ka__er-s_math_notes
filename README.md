@@ -1,12 +1,10 @@
-# ka__er-s_math_notes
-
-卡儿的数学笔记的配套示例代码
+# 卡儿的数学笔记的配套示例代码
 
 This is the sample code for ka__er's math notes.
 
 ---
 
-#### 文件说明
+### 文件说明
 
 `ope_matrix_qr_iteration.py`：一元N次方程的数值方法的通解里，完整的基本QR迭代。
 
