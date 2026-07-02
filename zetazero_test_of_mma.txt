@@ -1,0 +1,83 @@
+(* 代码语言：Wolfram *)
+
+
+(* 第一个输入框开始 *)
+
+ClearAll["Global`*"];
+theta[t_]:=(t/2)*(Log[t/(2 Pi)]-1)-Pi/8+1/(48t);
+M[t_]:=Floor[Sqrt[t/(2 Pi)]];
+p[t_]:=Sqrt[t/(2 Pi)]-M[t];
+C0[t_]:=Module[{pt=p[t]},Cos[2 Pi (pt^2-pt-1/16)]/Cos[2 Pi pt]];
+C1[t_]:=Module[{pt=p[t]},(46/25) (pt-1/2)^5-(97/2000) (pt-1/2)];
+C2[t_]:=Module[{pt=p[t]},(19/20) Abs[pt-1/2]^7-(183/1000) (pt-1/2)^4+(13/2500)];
+R[t_]:=Module[{Mt=M[t],tt=t/(2 Pi)},(-1)^(Mt-1)*tt^(-1/4)*(C0[t]+C1[t]*tt^(-1/2)+C2[t]*tt^(-1))];
+Z[t_]:=Module[{Mt=M[t]},R[t]+2 Sum[Cos[theta[t]-t Log[n]]/Sqrt[n],{n,1,Mt}]];
+(*注意：Mathematica 中的 LambertW 函数叫做 ProductLog*)
+g[n_]:=(2 Pi (n-7/8))/ProductLog[(n-7/8)/E];
+
+times=5; (* <-迭代次数*)
+(*定义割线法 (Secant Method) 迭代求零点的函数*)
+FindZetaZero[n_]:=Module[{t0,tPrev,tNext,z0,zPrev,i},
+t0=N[g[n],1000];
+tPrev=t0-2 Pi/Log[t0];
+z0=Z[t0];
+zPrev=Z[tPrev];
+For[i=1,i<=times,i++,tNext=t0-z0*(t0-tPrev)/(z0-zPrev);
+(*更新变量，准备下一次迭代*)
+tPrev=t0;
+zPrev=z0;
+t0=tNext;
+z0=Z[t0];];
+Return[t0];];
+
+(* 计算 *)
+n=30;
+For[j=1,j<=n,j++,
+u0=Abs[Im[ZetaZero[j]]-FindZetaZero[j]];
+Print["(",j,", ",N[u0,10],", ",N[Im[ZetaZero[j]],10],", ",NumberForm[FindZetaZero[j],10],")"]]
+
+(* 第一个输入框结束 *)
+
+(* 运行第一个输入框，会打印第1到30个近似零点 *)
+
+
+(* 第二个输入框开始 *)
+
+ClearAll["Global`*"]
+theta[t_]:=(t/2)*(Log[t/(2 Pi)]-1)-Pi/8;
+M[t_]:=Floor[Sqrt[t/(2 Pi)]];
+p[t_]:=Sqrt[t/(2 Pi)]-M[t];
+C0[t_]:=Module[{pt=p[t]},Cos[2 Pi (pt^2-pt-1/16)]/Cos[2 Pi pt]];
+C1[t_]:=Module[{pt=p[t]},(46/25) (pt-1/2)^5-(97/2000) (pt-1/2)];
+C2[t_]:=Module[{pt=p[t]},(19/20) Abs[pt-1/2]^7-(183/1000) (pt-1/2)^4+(13/2500)];
+R[t_]:=Module[{Mt=M[t],tt=t/(2 Pi)},(-1)^(Mt-1)*tt^(-1/4)*(C0[t]+C1[t]*tt^(-1/2)+C2[t]*tt^(-1))];
+Z[t_]:=Module[{Mt=M[t]},R[t]+2 Sum[Cos[theta[t]-t Log[n]]/Sqrt[n],{n,1,Mt}]];
+(*注意：Mathematica 中的 LambertW 函数叫做 ProductLog*)
+g[n_]:=(2 Pi (n-7/8))/ProductLog[(n-7/8)/E];
+
+times=10; (* <-迭代次数*)
+(*定义割线法 (Secant Method) 迭代求零点的函数*)
+FindZetaZero[n_,maxIter_:times]:=Module[{t0,tPrev,tNext,z0,zPrev,i},t0=N[g[n],200];
+tPrev=t0-2 Pi/Log[t0];
+z0=Z[t0];
+zPrev=Z[tPrev];
+Print["计算第 ",n," 个非平凡零点:"];
+Print["初始值: t_0 = ",NumberForm[t0,15],", t_{-1} = ",NumberForm[tPrev,15]];
+For[i=1,i<=maxIter,i++,tNext=t0-z0*(t0-tPrev)/(z0-zPrev);
+(*更新变量，准备下一次迭代*)tPrev=t0;
+zPrev=z0;
+t0=tNext;
+z0=Z[t0];
+Print["第 ",i," 次迭代: ",NumberForm[t0,15]," -> 分母：",NumberForm[z0-zPrev,10]];];
+Print["\n--> 最终计算得到的零点约等于: 0.5 + ",NumberForm[t0,15]," i\n"];
+Return[t0];];
+
+(*计算第 n 个非平凡零点*)
+n=13;
+FindZetaZero[n];
+
+1/2+N[Im[ZetaZero[n]],20]I
+
+(* 第二个输入框结束 *)
+
+(* 运行第二个输入框，会打印第13个零点的第1到10次迭代的情况 *)
