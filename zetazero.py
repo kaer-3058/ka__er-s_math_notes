@@ -73,7 +73,3 @@ def find_zeta_zero(n, max_iter=5): #割线法
 n = 5
 if __name__ == "__main__":
     find_zeta_zero(n)
-
-from mpmath import mp, zetazero
-zero = zetazero(n)
-print(f"第 {n} 个零点是: {zero}")
