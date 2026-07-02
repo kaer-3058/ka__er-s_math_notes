@@ -30,3 +30,10 @@ This is the sample code for ka__er's math notes.
 `zetazero_t_function_of_ggb.txt`：数值报告的实验数据-GeoGebra。
 
 `zetazero_test_of_mma.txt`：数值报告的实验数据-Mathematics。
+
+---
+
+## 图示
+
+![](https://s41.ax1x.com/2026/07/03/pmwsS8e.png)
+
