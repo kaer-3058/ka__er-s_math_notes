@@ -43,31 +43,36 @@ def g(n): #第 n 个非平凡零点的虚部估计函数
     w_val = lambertw(x / math.e).real
     return (2.0 * math.pi * x) / w_val
 
-def find_zeta_zero(n, max_iter=5): #割线法
+def find_zeta_zero(n, max_iter=5): # 割线法
     t0 = g(n)
     t_prev = t0 - (2.0 * math.pi) / math.log(t0)
-    z0 = Z(t0)
-    z_prev = Z(t_prev)
     print(f"计算第 {n} 个非平凡零点:")
     print(f"初始值: t_0 = {t0:.3f}, t_{{-1}} = {t_prev:.3f}")
-    
+
     # 迭代
     for i in range(1, max_iter+1):
-        # 避免分母为0
+        # --- 保护层：确保输入合法 ---
+        if t0 <= 0 or t_prev <= 0:
+            # 如果出现负数，说明迭代已经逃逸，返回一个标记值或跳出
+            return float('nan') # 或者你可以返回 t0 的旧值
+        
+        z0 = Z(t0)
+        z_prev = Z(t_prev)
+        
         if z0 - z_prev == 0:
             print("警告: 遇到极值或迭代精度达到极限，停止迭代")
             break
+            
         t_next = t0 - z0 * (t0 - t_prev) / (z0 - z_prev)
         t_prev = t0
-        z_prev = z0
         t0 = t_next
-        z0 = Z(t0)
         
         # 使用 :.10f 控制打印 10 位小数
         print(f"第 {i} 次迭代: {t0:.10f}")
-
+    
     print(f"\n--> 最终计算得到的零点约等于: 0.5 + {t0:.10f} i\n")
     return t0
+
 
 # 计算第n个非平凡零点
 n = 1
