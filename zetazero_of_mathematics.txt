@@ -10,6 +10,7 @@ R[t_] := Module[{Mt = M[t], tt = t/(2 Pi)}, (-1)^(Mt - 1)*tt^(-1/4)*(C0[t] + C1[
 Z[t_] := Module[{Mt = M[t]}, R[t] + 2 Sum[Cos[theta[t] - t Log[n]]/Sqrt[n], {n, 1, Mt}]];
 (*注意：Mathematica 中的 LambertW 函数叫做 ProductLog*)
 g[n_] := (2 Pi (n - 7/8))/ProductLog[(n - 7/8)/E];
+
 times = 5; (* <-迭代次数*)
 (*定义割线法 (Secant Method) 迭代求零点的函数*)
 FindZetaZero[n_, maxIter_ : times] := 
@@ -18,11 +19,10 @@ FindZetaZero[n_, maxIter_ : times] :=
    z0 = Z[t0];
    zPrev = Z[tPrev];
    Print["计算第 ", n, " 个非平凡零点:"];
-   Print["初始值: t_0 = ", NumberForm[t0, 15], ", t_{-1} =
-", NumberForm[tPrev, 15]];
-   For[i = 1, i <= maxIter, i++, 
-    tNext = t0 - z0*(t0 - tPrev)/(z0 - zPrev);
-    (*更新变量，准备下一次迭代*)tPrev = t0;
+   Print["初始值: t_0 = ", NumberForm[t0, 15], ", t_{-1} = ", NumberForm[tPrev, 15]];
+   For[i = 1, i <= maxIter, i++, tNext = t0 - z0*(t0 - tPrev)/(z0 - zPrev);
+    (*更新变量，准备下一次迭代*)
+    tPrev = t0;
     zPrev = z0;
     t0 = tNext;
     z0 = Z[t0];
