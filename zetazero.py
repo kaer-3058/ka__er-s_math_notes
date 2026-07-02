@@ -70,6 +70,6 @@ def find_zeta_zero(n, max_iter=5): #割线法
     return t0
 
 # 计算第n个非平凡零点
-n = 5
+n = 1
 if __name__ == "__main__":
     find_zeta_zero(n)
