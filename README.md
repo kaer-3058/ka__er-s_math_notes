@@ -35,6 +35,10 @@ This is the sample code for ka__er's math notes.
 
 `zetazero_test_of_mma.txt`：数值报告的实验数据-Mathematics。
 
+`first_n_zetazero_of_formula`：测时用近似公式计算前n个黎曼零点
+
+`first_n_zetazero_of_python_lib`：测时用Python的mpmath库计算前n个黎曼零点
+
 ---
 
 ## 图示
