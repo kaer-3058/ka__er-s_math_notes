@@ -8,11 +8,15 @@ This is the sample code for ka__er's math notes.
 
 #### 一元N次方程的数值方法的通解 - 附属文件
 
+文件夹：qr_n-th degree equation
+
 `ope_matrix_qr_iteration.py`：完整的基本QR迭代。
 
 `ope_r_matrix.py`：计算R矩阵。
 
 #### 一种手算ζ零点的方法 - 附属文件
+
+文件夹：manual_calculation_zetazero
 
 `zetazero-s_experimental_data.csv`：数值实验报告表格。近似公式的误差与速度分析表，在GitHub网页上点开就能预览。文件里，从左往右并排有四张表：
 
