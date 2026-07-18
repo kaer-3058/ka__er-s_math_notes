@@ -1,0 +1,36 @@
+(* 用mathematics绘制曼德勃罗集合 *)
+
+(* 这是基础版本 *)
+mand = Compile[{{z0, _Complex}, {nmax, _Integer}}, 
+   Module[{z = z0, i = 1}, 
+    While[i < nmax && Abs[z] <= 2, z = z^2 + z0; i++]; i]];
+ArrayPlot[
+ Reverse@Transpose@
+   Table[mand[x + y I, 500], {x, -2, 2, 0.01}, {y, -2, 2, 0.01}]]
+
+
+(* 这是彩色版本 *)
+(* 1. 编译迭代函数以大幅提升计算速度 *)
+mandelbrotComp = Compile[{{c, _Complex}},
+   Module[{z = 0.I, n = 0, maxIter = 150},
+    While[Abs[z] < 2.0 && n < maxIter,
+     z = z^2 + c;
+     n++
+     ];
+    n
+    ],
+   CompilationTarget -> "C", (* 如果电脑支持C编译器可以开启，不支持删掉这行即可 *)
+   Parallelization -> True
+   ];
+
+(* 2. 绘制彩色密度图 *)
+DensityPlot[
+ mandelbrotComp[x + I y], 
+ {x, -2.0, 0.8}, {y, -1.4, 1.4},
+ ColorFunction -> "BlueGreenYellow", (* 可更换为您喜欢的色带 *)
+ ColorFunctionScaling -> True,
+ PlotPoints -> 500,                  (* 点数越多，图像越清晰，但计算越慢 *)
+ Mesh -> None,
+ Frame -> False,
+ ImageSize -> 800
+]

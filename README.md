@@ -10,9 +10,11 @@ This is the sample code for ka__er's math notes.
 
 文件夹：qr_n-th degree equation
 
+`ope_r_matrix.py`：计算R矩阵。
+
 `ope_matrix_qr_iteration.py`：完整的基本QR迭代。
 
-`ope_r_matrix.py`：计算R矩阵。
+　
 
 #### 一种手算ζ零点的方法 - 附属文件
 
@@ -39,9 +41,29 @@ This is the sample code for ka__er's math notes.
 
 `first_n_zetazero_of_python_lib.py`：测时用Python的mpmath库计算前n个黎曼零点
 
----
+　
+
+#### 曼德勃罗集合 - 附属文件
+
+文件夹：mandelbrot
+
+`mandelbrot.py`: 用Python绘制曼德勃罗集合图像
+
+`mandelbrot_of_mma.txt`: 用mathematics绘制曼德勃罗集合图像
+
+　
+
+------
 
 ## 图示
 
+1.我的方法计算零点相比于Python的mpmath库的速度
+
 ![](https://s41.ax1x.com/2026/07/03/pmwsS8e.png)
+
+　
+
+2.曼德勃罗集合图像
+
+![](https://s41.ax1x.com/2026/07/18/pmybSUI.png)
 
