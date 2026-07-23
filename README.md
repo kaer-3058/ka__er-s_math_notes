@@ -51,6 +51,8 @@ This is the sample code for ka__er's math notes.
 
 `mandelbrot_of_mma.txt`: 用mathematics绘制曼德勃罗集合图像
 
+`interactive_mandelbrot_of_mma.txt`：用mathematics软件绘制可交互式缩放的曼德勃罗集合图像
+
 　
 
 ------
