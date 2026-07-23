@@ -1,0 +1,27 @@
+(* 用mathematics软件绘制可交互式缩放的曼德勃罗集合图像 *)
+
+DynamicModule[{center = {-0.7479113164616995,0.10024240816036914}, zoom = 0.0001, maxIter = 400},
+ Panel[
+  Column[{
+    ClickPane[
+     Dynamic[
+      MandelbrotSetPlot[
+       {center[[1]] + center[[2]] I - (zoom + zoom I)/2,
+        center[[1]] + center[[2]] I + (zoom + zoom I)/2},
+       MaxIterations -> maxIter,
+       ColorFunction -> Hue,
+       ImageResolution -> 500,
+       ImageSize -> 500
+      ]
+     ],
+     (center = #) &
+    ],
+    Grid[{
+      {"中心实部", InputField[Dynamic[center[[1]]], Number, FieldSize -> 12]},
+      {"中心虚部", InputField[Dynamic[center[[2]]], Number, FieldSize -> 12]},
+      {"缩放范围", Slider[Dynamic[zoom], {0.0000001,0.1}, ImageSize -> 200]},
+      {"迭代次数", Slider[Dynamic[maxIter], {50, 2000, 50}, ImageSize -> 200]}
+     }, Alignment -> Left]
+   }]
+ ]
+]
