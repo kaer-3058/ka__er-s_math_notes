@@ -55,6 +55,14 @@ This is the sample code for ka__er's math notes.
 
 　
 
+#### 平方根小数部分的估值公式 - 附属文件
+
+文件夹：sqrt_estimation
+
+`test_of_py.py`：计算估值公式的Python示例代码
+
+　
+
 ------
 
 ## 图示
