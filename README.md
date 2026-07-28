@@ -6,7 +6,7 @@ This is the sample code for ka__er's math notes.
 
 ## 文件说明
 
-#### 一元N次方程的数值方法的通解 - 附属文件
+#### 一元N次方程的数值方法的通解
 
 文件夹：qr_n-th degree equation
 
@@ -16,7 +16,7 @@ This is the sample code for ka__er's math notes.
 
 　
 
-#### 一种手算ζ零点的方法 - 附属文件
+#### 一种手算ζ零点的方法
 
 文件夹：manual_calculation_zetazero
 
@@ -43,7 +43,7 @@ This is the sample code for ka__er's math notes.
 
 　
 
-#### 曼德勃罗集合 - 附属文件
+#### 曼德勃罗集合
 
 文件夹：mandelbrot
 
@@ -55,11 +55,29 @@ This is the sample code for ka__er's math notes.
 
 　
 
-#### 平方根小数部分的估值公式 - 附属文件
+#### 平方根小数部分的估值公式
 
 文件夹：sqrt_estimation
 
 `test_of_py.py`：计算估值公式的Python示例代码
+
+　
+
+#### 用Python计算圆周率
+
+文件夹：ope_pi_of_python
+
+`machin.s_formula.py`：用梅钦公式计算
+
+`ramanujan.s_formula.py`：用拉马努金公式计算
+
+　
+
+#### 由纵横n个点组成的连线图
+
+文件夹：connection_diagram
+
+`plot.py`：生成连线图
 
 　
 
