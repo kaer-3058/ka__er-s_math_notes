@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz-cd}
+\usepackage{ctex}
+\usepackage[left=1cm, right=1cm, top=1.5cm, bottom=1.5cm, headsep=0.75cm, footskip=0.75cm]{geometry}
+
+\begin{document}
+
+% 这里写了一些公式的tex代码
+% 直接运行会在当前目录输出一个pdf文档
+
+% 自然排列常数
+^^^^81ea^^^^7136^^^^6392^^^^5217^^^^5e38^^^^6570: 
+\[
+\sum_{m=1}^{\infty}{\left( \sum_{n=1}^m{n\cdot 10^{\left( \sum_{k=1}^m{\left( \lfloor \lg \left( k \right) \rfloor +1 \right)} \right) -n-\sum_{j=10}^n{\lfloor \lg \left( j \right) \rfloor}}} \right)}\cdot 10^{-\sum_{p=1}^m{\left( \lfloor \lg \left( \left| \sum_{n=1}^p{n\cdot 10^{\left( \sum_{k=1}^p{\left( \lfloor \lg \left( k \right) \rfloor +1 \right)} \right) -n-\sum_{j=10}^n{\lfloor \lg \left( j \right) \rfloor}}} \right| \right) \rfloor +1 \right)}}
+\]
+\[=0.112123123412345123456123456712345678... \]
+
+\vspace{1cm}  % 宽1厘米的空行
+
+% 用一个同时包含极限、导数、积分、指数函数、对数函数、三角函数、伽玛函数、不完全伽玛函数、贝塔函数、黎曼zeta函数、LambertW函数、高斯误差函数、无穷级数、无穷乘积、虚数单位的式子表示π
+^^^^7528^^^^4e00^^^^4e2a^^^^540c^^^^65f6^^^^5305^^^^542b^^^^6781^^^^9650^^^^3001^^^^5bfc^^^^6570^^^^3001^^^^79ef^^^^5206^^^^3001^^^^6307^^^^6570^^^^51fd^^^^6570^^^^3001^^^^5bf9^^^^6570^^^^51fd^^^^6570^^^^3001^^^^4e09^^^^89d2^^^^51fd^^^^6570^^^^3001^^^^4f3d^^^^739b^^^^51fd^^^^6570^^^^3001^^^^4e0d^^^^5b8c^^^^5168^^^^4f3d^^^^739b^^^^51fd^^^^6570^^^^3001^^^^8d1d^^^^5854^^^^51fd^^^^6570^^^^3001^^^^9ece^^^^66fczeta^^^^51fd^^^^6570^^^^3001LambertW^^^^51fd^^^^6570^^^^3001^^^^9ad8^^^^65af^^^^8bef^^^^5dee^^^^51fd^^^^6570^^^^3001^^^^65e0^^^^7a77^^^^7ea7^^^^6570^^^^3001^^^^65e0^^^^7a77^^^^4e58^^^^79ef^^^^3001^^^^865a^^^^6570^^^^5355^^^^4f4d^^^^7684^^^^5f0f^^^^5b50^^^^8868^^^^793a$\pi$: 
+\[
+\lim_{k\rightarrow \infty} \int_{-k}^k{\prod_{p=1}^{\infty}{\left( \exp \left( -\frac{\Gamma' \left( 1 \right)}{2}+\sum_{n=2}^{\infty}{\frac{\zeta \left( n \right)}{n2^n}}-\mathrm{Β}\left( \ln \left( \cos \left( -i^{\left( 5^p \right)} \right) +i\sin \left( i^{\left( 7^{2p+1} \right)} \right) \right) ,W\left( \frac{\sqrt[t]{\Gamma \left( \lceil 3\mathrm{erf}\left( p \right) \rceil ,-1 \right)}}{t} \right) \right) ^2 \right) \right) ^{\lfloor 2^{1-p^2} \rfloor}}\,\mathrm{d}t}
+\]
+\[=\pi \]
+
+\vspace{1cm}
+
+% 巴塞尔问题
+^^^^5df4^^^^585e^^^^5c14^^^^95ee^^^^9898: 
+\[\sum_{n=1}^{\infty}{\frac{1}{n^2}}=\frac{\pi^2}{6}\]
+
+\vspace{1cm}
+
+% 偏匀分布概率密度函数
+^^^^504f^^^^5300^^^^5206^^^^5e03^^^^6982^^^^7387^^^^5bc6^^^^5ea6^^^^51fd^^^^6570: 
+\[
+r\left( x \right)=\left\{ \begin{matrix}
+	\left( 1-\left( \frac{x-a}{b-a} \right) ^p \right) ^{\frac{1}{p}-1}\frac{\left( \frac{x-a}{b-a} \right) ^{p-1}}{b-a}&		,\,\,x\in \left[ a,b \right]\\
+	&		\\
+	0&		,\,\,x\notin \left[ a,b \right]\\
+\end{matrix} \right. 
+\]
+
+\vspace{1cm}
+
+% 心形区域
+^^^^5fc3^^^^5f62^^^^533a^^^^57df: 
+\[
+\left( \sqrt{r\left| x \right|-x^2}-y \right) \left( \frac{r}{2}\arccos \left( \frac{2\left| x \right|}{r}-1 \right) +y \right) \geqslant 0
+\]
+
+\vspace{1cm}
+
+% 偏峰波线
+% \\[6pt] 是增加两行之间的间距，可选
+^^^^504f^^^^5cf0^^^^6ce2^^^^7ebf: 
+\[
+f\left( x \right)=\left\{ 
+\begin{array}{ll}
+\left| \left( 1-\left( x-\lfloor x \rfloor \right) ^p \right) ^{\frac{1}{p}}-1+x-\lfloor x \rfloor \right| & ,\ x-2\lfloor \frac{x}{2} \rfloor \leqslant 1\\[6pt]
+-\left| \left( 1-\left( x-\lfloor x \rfloor \right) ^{\frac{1}{p}} \right) ^p-1+x-\lfloor x \rfloor \right| & ,\ x-2\lfloor \frac{x}{2} \rfloor >1\\
+\end{array} 
+\right. 
+\]
+
+\vspace{1cm}
+
+% 伽马函数
+^^^^4f3d^^^^9a6c^^^^51fd^^^^6570: 
+\[
+\Gamma \left( z \right) =\int_0^{\infty}{t^{z-1}\mathrm{e}^{-t}\,\mathrm{d}t}\,,\,\, \Re \left( z \right) >0
+\]
+
+\vspace{1cm}
+
+% 欧拉恒等式
+^^^^6b27^^^^62c9^^^^6052^^^^7b49^^^^5f0f: 
+\[
+\mathrm{e}^{i\pi}+1=0
+\]
+
+\vspace{1cm}
+
+% 用积分表示e
+^^^^7528^^^^79ef^^^^5206^^^^8868^^^^793ae: 
+\[
+\int_0^1{\frac{1}{\lfloor \frac{1}{t} \rfloor !t^2}\,\mathrm{d}t}=\mathrm{e}-1
+\]
+
+\vspace{1cm}
+
+% 拉马努金的圆周率公式：
+^^^^62c9^^^^9a6c^^^^52aa^^^^91d1^^^^7684^^^^5706^^^^5468^^^^7387^^^^516c^^^^5f0f: 
+\[
+\frac{1}{\pi}=\frac{2\sqrt{2}}{99^2}\sum_{n=0}^{\infty}{\frac{\left( 4n \right) !}{\left( n! \right) ^4}\frac{1103+26390n}{396^{4n}}}
+\]
+
+\end{document}

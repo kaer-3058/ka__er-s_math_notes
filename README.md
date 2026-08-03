@@ -81,6 +81,22 @@ This is the sample code for ka__er's math notes.
 
 　
 
+#### 一些公式的tex代码
+
+文件夹：some_formulas_tex
+
+`some_formulas.tex`：tex代码，直接运行会在当前目录输出一个pdf文档
+
+　
+
+#### 用Python求解魔方
+
+文件夹：solve_rubik.s_cube
+
+`base_of_kociemba_lib.py`：基于kociemba库求解
+
+　
+
 ------
 
 ## 图示
