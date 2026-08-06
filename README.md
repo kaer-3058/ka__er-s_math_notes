@@ -97,6 +97,16 @@ This is the sample code for ka__er's math notes.
 
 　
 
+#### 绘制素数定理图像：π(x)/Li(x)
+
+文件夹：plot_pi_li_func
+
+`sampling_pi_li_func.cpp`：使用primecount库计算π(x)，以对数尺度进行采样
+
+`plot_pi_li_ratio.py`：把采样得到的点绘制成连续的图像
+
+　
+
 ------
 
 ## 图示
