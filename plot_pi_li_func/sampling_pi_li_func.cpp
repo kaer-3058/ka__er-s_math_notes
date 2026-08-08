@@ -20,13 +20,14 @@ double Li(double x) {
 
 int main() {
     std::ofstream outfile("data.csv");
-    outfile << "x,pi,Li,ratio\n";
+    outfile << "x,pi,Li,ratio1,ratio2\n";
 
     // 按指数递增采样（方便对数横坐标）
     // 采样 3000 个点，足够保证图像平滑
     int total_points = 3000;
     double log_start = 0.47;   // 设置开始值的10的指数
-    double log_end = 14.0;    // 设置结束值的10的指数
+    double log_end = 18;    // 设置结束值的10的指数
+                            //注意上限：int_64上限约为9.223372036855*10^18
 
     std::cout << "正在计算 10^" << log_start << " 到 10^" << log_end << " 的数据，请稍候..." << std::endl;
 
@@ -39,9 +40,10 @@ int main() {
         // 使用 primecount 计算 pi(x)
         int64_t pi_x = primecount::pi(x);
         double li_x = Li(static_cast<double>(x));
-        double ratio = static_cast<double>(pi_x) / li_x;
+        double ratio1 = static_cast<double>(pi_x) / li_x;               // pi(x) / Li(x)
+        double ratio2 = static_cast<double>(pi_x) / (x / std::log(x));  // pi(x) / (x / ln(x))
 
-        outfile << x << "," << pi_x << "," << li_x << "," << ratio << "\n";
+        outfile << x << "," << pi_x << "," << li_x << "," << ratio1 << "," << ratio2 << "\n";
     }
 
     outfile.close();
