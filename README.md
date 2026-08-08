@@ -97,7 +97,7 @@ This is the sample code for ka__er's math notes.
 
 　
 
-#### 绘制素数定理图像：π(x)/Li(x)
+#### 绘制素数定理图像：π(x)/Li(x) 和 π(x)/(x/log(x))
 
 文件夹：plot_pi_li_func
 
