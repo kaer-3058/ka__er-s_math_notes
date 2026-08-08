@@ -105,6 +105,8 @@ This is the sample code for ka__er's math notes.
 
 `plot_pi_li_ratio.py`：把采样得到的点绘制成连续的图像
 
+`data.csv`：直接运行计算代码采样得到的数据
+
 　
 
 ------
