@@ -109,6 +109,16 @@ This is the sample code for ka__er's math notes.
 
 　
 
+#### 高精度近似ln(x)
+
+文件夹：ope_ln
+
+`ope_ln_of_c.c`：使用C语言实现
+
+`ope_ln_of_go.go`：使用Go语言实现
+
+　
+
 ------
 
 ## 图示
