@@ -119,6 +119,16 @@ This is the sample code for ka__er's math notes.
 
 　
 
+#### 算数导数
+
+文件夹：arithmetic_derivative
+
+`compute_integers.py`：计算非负的整数的算数导数
+
+`compute_rational_numbers.py`：计算有理数的算数导数
+
+　
+
 ------
 
 ## 图示
