@@ -95,6 +95,8 @@ This is the sample code for ka__er's math notes.
 
 `base_of_kociemba_lib.py`：基于kociemba库求解
 
+魔方栈可以在线求解魔方：https://www.1988.kim/cuber/dist/index.html?mode=helper
+
 　
 
 #### 绘制素数定理图像：π(x)/Li(x) 和 π(x)/(x/log(x))
