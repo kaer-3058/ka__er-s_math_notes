@@ -127,6 +127,8 @@ This is the sample code for ka__er's math notes.
 
 `compute_rational_numbers.py`：计算有理数的算数导数
 
+`polt.py`：绘制[0,1]区间内的算数导数图像，使用了特定构造以呈现其无序特征
+
 　
 
 ------
