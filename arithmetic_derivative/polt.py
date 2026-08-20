@@ -1,7 +1,7 @@
 from fractions import Fraction
 import math
 import os
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plot
 
 # 算术导数核心算法
 def integer_arithmetic_derivative(n: int) -> int:
@@ -93,8 +93,7 @@ if __name__ == "__main__":
     print("1. 正在生成发散采样点...")
     samples = generate_hyper_unbounded_samples(max_points = 500000)
 
-    x_vals = []
-    y_vals = []
+    x_vals, y_vals, points = [], [], []
 
     print("2. 正在计算算术导数并同步写入文件...")
     with open(output_path, "w", encoding="utf-8") as f:
@@ -107,21 +106,30 @@ if __name__ == "__main__":
             # 同时收集用于绘图的浮点数坐标
             x_vals.append(float(q))
             y_vals.append(float(dq))
+            points.append((q,dq))
 
     print(f"数据成功保存至：\n{os.path.abspath(output_path)}")
 
     # 3. 实时绘制图像
-    print("3. 正在生成折线/散点图...")
-    plt.figure(figsize=(12, 7))
-    plt.scatter(x_vals, y_vals, s=3, color="crimson", alpha=0.6)
+    print("3. 正在生成散点图...")
+    plot.figure(figsize=(12, 7))
+    plot.scatter(x_vals, y_vals, s=3, color="crimson", alpha=0.6)
 
-    plt.xlim(0, 1)
-    plt.title("Extreme Unbounded Arithmetic Derivative D(q) in [0, 1]", fontsize=13)
-    plt.xlabel("q")
-    plt.ylabel("D(q)")
-    plt.grid(True, which="both", linestyle=":", alpha=0.5)
+    plot.xlim(0, 1)
+    plot.title("Extreme Unbounded Arithmetic Derivative D(q) in [0, 1]", fontsize=13)
+    plot.xlabel("q")
+    plot.ylabel("D(q)")
+    plot.grid(True, which="both", linestyle=":", alpha=0.5)
 
-    print(f"最大极值: {max(y_vals):.2e}")
-    print(f"最小极值: {min(y_vals):.2e}")
+    max_y_point = max(points, key=lambda p: p[1])
+    min_y_point = min(points, key=lambda p: p[1])
+
+    a1, b1 = max_y_point[0].numerator, max_y_point[0].denominator
+    c1, d1 = max_y_point[1].numerator, max_y_point[1].denominator
+    a2, b2 = min_y_point[0].numerator, min_y_point[0].denominator
+    c2, d2 = min_y_point[1].numerator, min_y_point[1].denominator
+
+    print(f"最大值点: ({a1}/{b1}, {c1}/{d1})")
+    print(f"最小值点: ({a2}/{b2}, {c2}/{d2})")
     
-    plt.show()
+    plot.show()
