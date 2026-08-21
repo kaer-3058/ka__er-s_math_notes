@@ -14,6 +14,8 @@ This is the sample code for ka__er's math notes.
 
 `ope_matrix_qr_iteration.py`：完整的基本QR迭代。
 
+`flowchart.mmd`：算法流程图
+
 　
 
 #### 一种手算ζ零点的方法
