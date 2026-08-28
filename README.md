@@ -1,10 +1,16 @@
-# 卡儿的数学笔记的配套示例代码
+# 卡儿的数学笔记和配套示例代码
 
-This is the sample code for ka__er's math notes.
+ka__er's math notes and example code.
 
 ---
 
-## 文件说明
+## 数学笔记说明
+
+以pdf文档格式发布于本仓库的release(发行版)里。
+
+　
+
+## 示例代码说明
 
 #### 一元N次方程的数值方法的通解
 
