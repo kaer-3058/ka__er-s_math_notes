@@ -155,3 +155,9 @@ ka__er's math notes and example code.
 
 ![](https://s41.ax1x.com/2026/07/18/pmybSUI.png)
 
+------
+
+##附
+
+附有我的诗选，可在本仓库的release(发行版)里下载
+
