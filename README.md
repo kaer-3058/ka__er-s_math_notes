@@ -157,7 +157,7 @@ ka__er's math notes and example code.
 
 ------
 
-##附
+## 附
 
 附有我的诗选，可在本仓库的release(发行版)里下载
 
